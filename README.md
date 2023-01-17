@@ -1,6 +1,6 @@
 # cologs
 
-A simple wrapper around `logger` from Python Standard Library with no dependencies. cologs sends its colorful output both to the terminal and into logs/cologs.log. The cologs.log file is rotated inside the logs folder when it gets large enough.
+A simple colorful wrapper around `logger` from Python Standard Library with no dependencies. cologs sends its colorful output both to the terminal and into logs/cologs.log. The cologs.log file is rotated inside the logs folder when it gets large enough.
 
 ## Installation
 
