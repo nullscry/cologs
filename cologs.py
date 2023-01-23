@@ -1,6 +1,6 @@
 """Colorful and Simple Logger: cologs"""
 
-__version__ = "0.2"
+__version__ = "0.3"
 
 import logging
 import os
@@ -12,6 +12,7 @@ COLOGS_FILE = "cologs.log"
 
 
 class CustomFormatter(logging.Formatter):
+    """Custom Formatter that adds Colored outputs for STDOUT and an informative format string to standard Python logger"""
     grey = "\x1b[38;20m"
     green = "\x1b[32;20m"
     yellow = "\x1b[33;20m"
@@ -35,6 +36,30 @@ class CustomFormatter(logging.Formatter):
 
 
 def get_cologs(logger_name="", default_level=logging.DEBUG):
+    """
+    Create a logger that sends its output to STDOUT and
+    `cologs.COLOGS_FOLDER/cologs.COLOGS_FILE`. You can change the constants if you'd like.
+    The `cologs.COLOGS_FILE` file is rotated when it gets large enough.
+
+    Args:
+        `logger_name`: name of logger. multiple calls to this function with same `logger_name`
+            returns the same cologs logger. by default `""`
+        `default_level`: default level for logging, by default `logging.DEBUG`
+
+    Returns:
+        cologs logger
+
+    ```py
+    from cologs import get_cologs
+
+    cologs = get_cologs()
+    cologs.debug("Debug message")
+    cologs.info("Info message")
+    cologs.warning("Warning message")
+    cologs.error("Error message")
+    cologs.critical("Critical message")
+    ```
+    """
     folder_path = COLOGS_FOLDER
     log_file_name = COLOGS_FILE
     if not os.path.exists(folder_path):
