@@ -13,6 +13,7 @@ COLOGS_FILE = "cologs.log"
 
 class CustomFormatter(logging.Formatter):
     """Custom Formatter that adds Colored outputs for STDOUT and an informative format string to standard Python logger"""
+
     grey = "\x1b[38;20m"
     green = "\x1b[32;20m"
     yellow = "\x1b[33;20m"

@@ -3,6 +3,7 @@ import shutil
 import sys
 
 import pytest
+
 from cologs import COLOGS_FILE, COLOGS_FOLDER, get_cologs
 
 STDOUT_FILE = "stdout.log"
